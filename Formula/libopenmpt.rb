@@ -1,8 +1,8 @@
 class Libopenmpt < Formula
   desc "Software library to decode tracked music files"
   homepage "https://lib.openmpt.org/libopenmpt/"
-  url "https://lib.openmpt.org/files/libopenmpt/src/libopenmpt-0.3.12+release.autotools.tar.gz"
-  sha256 "7134db999d33b96dc2db13dbaf29b7beeb4c58f62e57fd3caf36bb8428aa4b42"
+  url "https://lib.openmpt.org/files/libopenmpt/src/libopenmpt-0.4.0+release.autotools.tar.gz"
+  sha256 "5b70f8538fecdd41662008a4f50167df6c7685fdab38840c7a20eefb634cddab"
 
   depends_on "pkg-config" => :build
 
