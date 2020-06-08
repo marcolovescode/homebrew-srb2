@@ -13,7 +13,7 @@ class Sdl2Mixer < Formula
   end
 
   depends_on "pkg-config" => :build
-  depends_on "libmodplug"
+  depends_on "libmodplug" => :optional
   depends_on "libvorbis"
   depends_on "sdl2"
   depends_on "flac" => :optional
@@ -30,7 +30,6 @@ class Sdl2Mixer < Formula
       --disable-music-flac-shared
       --disable-music-midi-fluidsynth-shared
       --disable-music-mod-mikmod-shared
-      --enable-music-mod-modplug
       --disable-music-mod-modplug-shared
       --disable-music-mp3-smpeg
       --disable-music-mp3-mpg123-shared
@@ -39,6 +38,7 @@ class Sdl2Mixer < Formula
     args << "--disable-music-flac" if build.without? "flac"
     args << "--disable-music-midi-fluidsynth" if build.without? "fluid-synth"
     args << "--enable-music-mod-mikmod" if build.with? "libmikmod"
+    args << "--enable-music-mod-modplug" if build.with? "libmodplug"
     args << "--disable-music-mp3-mpg123" if build.without? "mpg123"
 
     system "./configure", *args
